@@ -1,0 +1,27 @@
+<ion-view view-title="Rüya Tabirleri">
+  <ion-content>
+
+<div class="list list-inset">
+  <label class="item item-input">
+    <i class="icon ion-search placeholder-icon"></i>
+    <input type="text" placeholder="Search" ng-model="kelime" ng-change="bul(kelime)">
+  </label>
+</div>
+
+<div class="card animate__animated animate__jello" ng-if="kelime">
+  <div class="item item-text-wrap item-dark">
+    "{{kelime}}" kelimesine ait {{sonuc.lenght}} sonuçlar
+  </div>
+</div>
+
+<img  ng-if="!kelime" src="../img/ruya2.svg" style="width: 100%">
+
+
+
+    <ion-list>
+      <ion-item ng-repeat="ruya in ruyalar " href="#/app/playlists/{{$index}}">
+        {{ruya.adi}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
